@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Main from './components/Main';
+import Options from './components/Options';
+import Drawer from '@material-ui/core/Drawer';
 
 function App() {
+  const [state, setState] = React.useState({
+    drawerOpen: false
+  });
+
+  const setDrawerState = _state => {
+    setState({ drawerOpen : _state });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="md-container">
+      <>
+        <Drawer open={state.drawerOpen }>
+          <div>
+            Content
+          </div>
+        </Drawer>
+        <Options setDrawerState={setDrawerState} />
+        <Main />
+      </> 
     </div>
   );
 }
