@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import CloseIcon from '@material-ui/icons/Close';
+import Button from '@material-ui/core/Button';
 //import { Test } from './Navigation.styles';
 
 class Navigation extends PureComponent { 
@@ -11,48 +13,22 @@ class Navigation extends PureComponent {
     };
   }
 
-  componentWillMount = () => {
-    console.log('Navigation will mount');
-  }
-
-  componentDidMount = () => {
-    console.log('Navigation mounted');
-  }
-
-  componentWillReceiveProps = (nextProps) => {
-    console.log('Navigation will receive props', nextProps);
-  }
-
-  componentWillUpdate = (nextProps, nextState) => {
-    console.log('Navigation will update', nextProps, nextState);
-  }
-
-  componentDidUpdate = () => {
-    console.log('Navigation did update');
-  }
-
-  componentWillUnmount = () => {
-    console.log('Navigation will unmount');
-  }
 
   render () {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
     return (
-      <div className="NavigationWrapper">
-        Test content
+      <div className="md-navigation-wrapper">
+        <div className="close-button">
+          <Button onClick={() => this.props.close(false) }>
+            <CloseIcon color="primary" className="cool-spin"/>
+          </Button>
+        </div>
+        
       </div>
     );
   }
 }
-
-Navigation.propTypes = {
-  // bla: PropTypes.string,
-};
-
-Navigation.defaultProps = {
-  // bla: 'test',
-};
 
 export default Navigation;

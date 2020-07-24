@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Typography from '@material-ui/core/Typography';
 import MyImage from '../MyImage';
 
 class Main extends PureComponent { 
@@ -21,8 +22,10 @@ class Main extends PureComponent {
     return (
       <div className="center">
         <MyImage />
-        <div className="name md-font">Miguel Delgado</div>
-        <div className="profession md-font">Software Engineer</div>
+        <Typography color="textPrimary">
+          <div className="name md-font">Miguel Delgado</div>
+          <div className="profession md-font">Software Engineer</div>
+        </Typography>  
       </div>
     );
   }
