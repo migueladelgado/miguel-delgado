@@ -4,9 +4,10 @@ import CodeIcon from '@material-ui/icons/Code';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import PersonPinCircleIcon from '@material-ui/icons/PersonPinCircle';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Tooltip from '@material-ui/core/Tooltip';
+import { getThemePreference, setThemePreference } from '../../Caching/LocalStorage';
+import { THEME } from '../../Enums/Enums';
 
 //Dynamically create buttons
 const OptionButtons = buttons => {
@@ -19,22 +20,26 @@ const OptionButtons = buttons => {
           { button.button }
         </Button>
       </Tooltip>
-      
     );
   });
   return ops;
 }
 
+const setThemeAndRefresh = () => {
+  let theme = getThemePreference();
+  let selection = theme && theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
+  setThemePreference(selection);
+  window.location.reload();
+}
+
 //render buttons
 const Options = (props) => {
-
   //Create object to store the buttons and actions
   const buttons = [
     { button: <FavoriteIcon color="primary" />, title: 'Coding For a Cause', action : () => console.log('hello') },
-    //{ button: <PersonPinCircleIcon />, title: '', action : () => console.log('hello') },
     { button: <LinkedInIcon color="primary"/>, title: 'My LinkedIn', action : () => console.log('hello') },
     { button: <EmailIcon  color="primary"/>, title: 'Email Me', action : () => console.log('hello') },
-    { button:  <Brightness4Icon color="primary"/>, title: 'Change Page Theme', action : () => console.log('hello') },
+    { button: <Brightness4Icon color="primary"/>, title: 'Change Page Theme', action : () => setThemeAndRefresh() },
     { button: <CodeIcon color="primary"/>, title: 'Check Out My Code', action : () => props.setDrawerState(true) },
   ]; 
 

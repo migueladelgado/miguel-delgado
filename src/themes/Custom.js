@@ -3,7 +3,6 @@ const _light = 'rgb(242, 242, 242)';
 const _dark = 'rgb(33, 33, 33)'
 
 const setTheme = isDark => {
-    
     if(isDark)
         return [_light, _dark];
     else 
