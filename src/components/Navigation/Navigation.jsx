@@ -25,7 +25,6 @@ class Navigation extends PureComponent {
             <CloseIcon color="primary" className="cool-spin"/>
           </Button>
         </div>
-        
       </div>
     );
   }

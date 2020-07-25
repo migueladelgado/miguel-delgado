@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 const _light = 'rgb(242, 242, 242)';
-const _dark = 'rgb(33, 33, 33)'
+const _dark = 'rgb(33, 33, 33)';
 
 const setTheme = isDark => {
     if(isDark)
@@ -25,7 +25,7 @@ const custom = options => {
                 MuiDrawer: {
                     paper: {
                         background: _paper,
-                        width: isMobile ? '100%' : '30%'
+                        width: isMobile ? '100%' : '30rem'
                     }
                 },
                 MuiTypography: {
