@@ -38,6 +38,10 @@
   box-shadow: 5px 12px 65px -19px rgba(0,0,0,0.75);
 }
 
+.md-navigation-wrapper{
+  /* padding: 5px; */
+}
+
 
 .name{
   text-align: center;
@@ -58,14 +62,23 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.nav-heading{
+  padding: 5px;
+  font-weight: bold;
+  font-size: 26px;
+}
+
 .close-button{
   width: 100%;
-  padding: 5px;
   text-align: right;
 }
 
 .cool-spin{
   animation: cool-spin 0.8s;
+}
+
+.grid-col{
+  width: 100%;
 }
 
 @keyframes cool-spin {

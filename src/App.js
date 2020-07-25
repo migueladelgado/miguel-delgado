@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 import Main from './components/Main';
 import Options from './components/Options';
-import Drawer from '@material-ui/core/Drawer';
-import Navigation from './components/Navigation';
 import ContentContainer from './components/ContentContainer';
+import CustomDrawer from './components/CustomDrawer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,9 +34,12 @@ function Index(){
 
   return (
     <ContentContainer>
-      <Drawer open={state.drawerOpen}>
-        <Navigation close={setDrawerState} />
-      </Drawer>
+      <CustomDrawer 
+        open={state.drawerOpen} 
+        close={setDrawerState}
+        title={"Projects && Coding Samples"}>
+        
+      </CustomDrawer>
       <Options setDrawerState={setDrawerState} />
       <Main />
     </ContentContainer> 
