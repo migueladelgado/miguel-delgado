@@ -1,3 +1,13 @@
+# This repo contains all source files for Miguel Delgado's developer site.
+
+Developers are welcome to view/clone my source code to understand how to program certain features and use different libraries featured in my site.
+
+ <h1> JUST DON'T STEAL MY IDENTITY!!!</h1>
+
+<em>
+    Below is some general about information about the react project.
+</em>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
